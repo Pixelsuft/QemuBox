@@ -1,0 +1,1553 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>650</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Configure Machine</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../assets/favicon.png</normaloff>../assets/favicon.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="settingsWidget">
+    <property name="geometry">
+     <rect>
+      <x>5</x>
+      <y>5</y>
+      <width>640</width>
+      <height>450</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>32</width>
+      <height>32</height>
+     </size>
+    </property>
+    <widget class="QWidget" name="motherTab">
+     <attribute name="icon">
+      <iconset>
+       <normaloff>../assets/motherboard.png</normaloff>../assets/motherboard.png</iconset>
+     </attribute>
+     <attribute name="title">
+      <string/>
+     </attribute>
+     <widget class="QLabel" name="cpuLabel">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>7</y>
+        <width>80</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>CPU:</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="cpuBox">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>5</y>
+        <width>500</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="accelLabel">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>42</y>
+        <width>80</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Accelerator: </string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="accelBox">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>40</y>
+        <width>500</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>Default (TCG)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>The Tiny Code Generator (Single Threaded) (TCG)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>The Tiny Code Generator (Multi Threaded) (TCG)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Microsoft Hyper-V (WHPX)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Intel Hardware Accelerated Execution Manager (HAXM)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Kernel Virtual Machine (KVM)</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QListWidget" name="cpuidList">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>75</y>
+        <width>480</width>
+        <height>200</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="cpuonButton">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>75</y>
+        <width>140</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Turn On</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="cpuoffButton">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>110</y>
+        <width>140</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Turn Off</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="cpudefaultButton">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>145</y>
+        <width>140</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Reset</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="cpuresetButton">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>180</y>
+        <width>140</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Reset All</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="bitCheck">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>210</y>
+        <width>140</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>64-bit</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="acpiCheck">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>235</y>
+        <width>140</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>ACPI</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="hpetCheck">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>260</y>
+        <width>140</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>HPET</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="memoryLabel">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>287</y>
+        <width>80</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Memory Size: </string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="memoryEdit">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>285</y>
+        <width>500</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="biosLabel">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>312</y>
+        <width>80</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Bios Path: </string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="biosEdit">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>310</y>
+        <width>350</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="cpusLabel">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>337</y>
+        <width>80</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>CPUs: </string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="cpuNum">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>335</y>
+        <width>500</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="speedNum">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>360</y>
+        <width>500</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="minimum">
+       <number>-1</number>
+      </property>
+      <property name="maximum">
+       <number>10</number>
+      </property>
+      <property name="value">
+       <number>-1</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="speedLabel">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>362</y>
+        <width>80</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Speed Hack:</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="biosButton">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>310</y>
+        <width>140</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Select...</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="videoTab">
+     <attribute name="icon">
+      <iconset>
+       <normaloff>../assets/video_mode.png</normaloff>../assets/video_mode.png</iconset>
+     </attribute>
+     <attribute name="title">
+      <string/>
+     </attribute>
+     <widget class="QLabel" name="videoLabel">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>7</y>
+        <width>100</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Video Adapter:</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="videoBox">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>5</y>
+        <width>500</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <item>
+       <property name="text">
+        <string>None</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Standard VGA</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Bochs Display Device (Not VGA Compatible)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>VirtIO VGA</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>VirtIO GPU (Not VGA Compatible)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>RedHat QXL VGA</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>ReadHat QXL (Not VGA Compatible)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Cirrus VGA</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>ATI Rage 128 Pro</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>ATI Radeon RV100</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>VMware SVGA 2</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>RAM FrameBuffer</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QComboBox" name="displayBox">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>40</y>
+        <width>500</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <item>
+       <property name="text">
+        <string>None</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>GTK</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>SDL2</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>VNC</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Curses</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="displayLabel">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>42</y>
+        <width>100</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Display:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="vmemLabel">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>112</y>
+        <width>100</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Memory (MB):</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="vmemNum">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>110</y>
+        <width>500</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="minimum">
+       <number>1</number>
+      </property>
+      <property name="maximum">
+       <number>65535</number>
+      </property>
+      <property name="value">
+       <number>1</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="possibleLabel">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>77</y>
+        <width>100</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>If Possible:</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="vpciCheck">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>147</y>
+        <width>50</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>PCI</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="vncaddrLabel">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>217</y>
+        <width>100</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>VNC Address:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="vncEdit">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>215</y>
+        <width>500</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="monitorLabel">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>252</y>
+        <width>100</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Monitor:</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="monitorBox">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>250</y>
+        <width>500</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <item>
+       <property name="text">
+        <string>None</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Console</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Graphical</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QComboBox" name="serialBox">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>285</y>
+        <width>500</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <item>
+       <property name="text">
+        <string>None</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Console</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Graphical</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="serialLabel">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>287</y>
+        <width>100</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Serial (COM):</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="parallelLabel">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>322</y>
+        <width>100</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Parallel (LPT):</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="parallelBox">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>320</y>
+        <width>500</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <item>
+       <property name="text">
+        <string>None</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Console</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Graphical</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QCheckBox" name="sgaCheck">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>147</y>
+        <width>150</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Serial Graphics Adapter</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="nographicCheck">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>147</y>
+        <width>100</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>No Graphic</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="darkifyLabel">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>182</y>
+        <width>100</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Darkify Timeout:</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="darkifyNum">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>180</y>
+        <width>500</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="minimum">
+       <number>0</number>
+      </property>
+      <property name="maximum">
+       <number>40000</number>
+      </property>
+      <property name="singleStep">
+       <number>500</number>
+      </property>
+      <property name="value">
+       <number>0</number>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="ctrlgrabCheck">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>147</y>
+        <width>75</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Ctrl Grab</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="mwinCheck">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>147</y>
+        <width>100</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>No Console</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="soundTab">
+     <attribute name="icon">
+      <iconset>
+       <normaloff>../assets/sound.png</normaloff>../assets/sound.png</iconset>
+     </attribute>
+     <attribute name="title">
+      <string/>
+     </attribute>
+     <widget class="QCheckBox" name="ac97Check">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>10</y>
+        <width>610</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Intel 82801AA AC97 Audio</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="adlibCheck">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>40</y>
+        <width>610</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Yamaha YM3812 (OPL2)</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="subaudioCheck">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>340</y>
+        <width>610</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>USB Audio</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="sb16Check">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>310</y>
+        <width>610</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Creative Sound Blaster 16</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="hdaich6Check">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>280</y>
+        <width>610</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Intel HD Audio Controller (ich6)</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="hdaich9Check">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>250</y>
+        <width>610</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Intel HD Audio Controller (ich9)</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="hdaoCheck">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>220</y>
+        <width>610</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>HDA Audio Codec, output-only (line-out)</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="hdamCheck">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>190</y>
+        <width>610</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>HDA Audio Codec, duplex (speaker, microphone)</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="hdadCheck">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>160</y>
+        <width>610</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>HDA Audio Codec, duplex (line-out, line-in)</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="gusCheck">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>130</y>
+        <width>610</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Gravis Ultrasound GF1</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="es1370Check">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>100</y>
+        <width>610</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>ENSONIQ AudioPCI ES1370</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="cs4231aCheck">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>70</y>
+        <width>610</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Crystal Semiconductor CS4231A</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="driveTab">
+     <attribute name="icon">
+      <iconset>
+       <normaloff>../assets/drive.png</normaloff>../assets/drive.png</iconset>
+     </attribute>
+     <attribute name="title">
+      <string/>
+     </attribute>
+     <widget class="QLineEdit" name="fdaEdit">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>5</y>
+        <width>360</width>
+        <height>24</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="fdaButton">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>5</y>
+        <width>120</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Select Floppy A</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="fdasButton">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>5</y>
+        <width>120</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Select Folder</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="fdbButton">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>35</y>
+        <width>120</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Select Floppy B</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="fdbEdit">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>35</y>
+        <width>360</width>
+        <height>24</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="fdbsButton">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>35</y>
+        <width>120</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Select Folder</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="hdaButton">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>80</y>
+        <width>120</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Select Hard Drive C</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="hdaEdit">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>80</y>
+        <width>360</width>
+        <height>24</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="hdasButton">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>80</y>
+        <width>120</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Select Folder</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="hdbButton">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>110</y>
+        <width>120</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Select Hard Drive D</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="hdbEdit">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>110</y>
+        <width>360</width>
+        <height>24</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="hdbsButton">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>110</y>
+        <width>120</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Select Folder</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="hdcButton">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>140</y>
+        <width>120</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Select Hard Drive E</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="hdcEdit">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>140</y>
+        <width>360</width>
+        <height>24</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="hdcsButton">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>140</y>
+        <width>120</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Select Folder</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="hddButton">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>170</y>
+        <width>120</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Select Hard Drive F</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="hddEdit">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>170</y>
+        <width>360</width>
+        <height>24</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="hddsButton">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>170</y>
+        <width>120</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Select Folder</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="cdromsButton">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>215</y>
+        <width>120</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Select Folder</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="cdromEdit">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>215</y>
+        <width>360</width>
+        <height>24</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="cdromButton">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>215</y>
+        <width>120</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Select CDROM</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="orderLabel">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>250</y>
+        <width>100</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Boot Order: </string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="orderBox">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>250</y>
+        <width>500</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <item>
+       <property name="text">
+        <string>Floppy / Hard Drive / CDROM</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Floppy / CDROM / Hard Drive</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Hard Drive / Floppy / CDROM</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Hard Drive / CDROM / Floppy</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>CDROM / Hard Drive / Floppy</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>CDROM / Floppy / Hard Drive</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="splashumLabel">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>282</y>
+        <width>100</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Boot Menu Time:</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="splashNum">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>280</y>
+        <width>500</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="maximum">
+       <number>65535</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="splashLabel">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>310</y>
+        <width>100</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Splash:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="splashEdit">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>310</y>
+        <width>370</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="splashButton">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>310</y>
+        <width>120</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Select File</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="devicesTab">
+     <attribute name="icon">
+      <iconset>
+       <normaloff>../assets/mouse_pc.png</normaloff>../assets/mouse_pc.png</iconset>
+     </attribute>
+     <attribute name="title">
+      <string/>
+     </attribute>
+     <widget class="QCheckBox" name="usbCheck">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>5</y>
+        <width>100</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Enable USB</string>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="device1List">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>40</y>
+        <width>307</width>
+        <height>220</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="device2List">
+      <property name="geometry">
+       <rect>
+        <x>322</x>
+        <y>40</y>
+        <width>307</width>
+        <height>220</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="deviceenableShow">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>270</y>
+        <width>600</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Enable</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="devicedeskLabel">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>300</y>
+        <width>600</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Description:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="devicebusLabel">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>330</y>
+        <width>600</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Bus:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="deviceotherLabel">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>360</y>
+        <width>100</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Options:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="deviceotherChange">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>358</y>
+        <width>520</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="otherTab">
+     <attribute name="icon">
+      <iconset>
+       <normaloff>../assets/network_ethernet.png</normaloff>../assets/network_ethernet.png</iconset>
+     </attribute>
+     <attribute name="title">
+      <string/>
+     </attribute>
+     <widget class="QCheckBox" name="sudoCheck">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>5</y>
+        <width>100</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Run as sudo</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="otherEdit">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>55</y>
+        <width>624</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="otherLabel">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>30</y>
+        <width>100</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Other Arguments:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="runLabel">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>90</y>
+        <width>100</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Run Method:</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="runBox">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>115</y>
+        <width>624</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>subprocess.Popen</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>subprocess.check_output (Debug)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>os.system</string>
+       </property>
+      </item>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="cancelButton">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>460</y>
+      <width>120</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Cancel</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="applyButton">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>460</y>
+      <width>120</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>OK!</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
