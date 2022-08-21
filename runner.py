@@ -175,12 +175,12 @@ def run_machine(c: dict) -> None:
     print(utils.stringify_cmdline(tuple(a)))
     try:
         if c['runBox'][1] == 0:
-            proc = subprocess.Popen(a)
+            proc = subprocess.Popen([str(x) for x in a])
             if c['darkifyNum'] > 0 and sys.platform == 'win32' and\
                     int(os.environ['__BORDER_THEME']) == wintheme.THEME_DARK:
                 Timer(c['darkifyNum'] / 1000, lambda: dark_qemu(proc.pid)).start()
         elif c['runBox'][1] == 1:
-            Thread(target=lambda: debug_qemu(a)).start()
+            Thread(target=lambda: debug_qemu([str(x) for x in a])).start()
         elif c['runBox'][1] == 2:
             Thread(target=lambda: os.system(utils.stringify_cmdline(tuple(a)))).start()
     except Exception as err:
