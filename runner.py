@@ -124,6 +124,12 @@ def run_machine(c: dict) -> None:
     if c['parallelBox'][1] > 0:
         a.append('-parallel')
         a.append('vc' if c['parallelBox'][1] >= 2 else 'stdio')
+    if c['hdaich9Check']:
+        a.append('-device')
+        a.append('ich9-intel-hda')
+    if c['hdaich6Check']:
+        a.append('-device')
+        a.append('intel-hda')
     for i in ('ac97Check', 'adlibCheck', 'cs4231aCheck', 'es1370Check', 'gusCheck', 'sb16Check'):
         if c[i]:
             a.append('-device')
@@ -137,12 +143,6 @@ def run_machine(c: dict) -> None:
     if c['hdaoCheck']:
         a.append('-device')
         a.append('hda-output')
-    if c['hdaich9Check']:
-        a.append('-device')
-        a.append('ich9-intel-hda')
-    if c['hdaich6Check']:
-        a.append('-device')
-        a.append('intel-hda')
     if c['subaudioCheck']:
         a.append('-device')
         a.append('usb-audio')
