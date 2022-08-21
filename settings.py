@@ -42,6 +42,7 @@ class ConfigureMachine:
                 getattr(self.ui, elem_name).setChecked(self.config[elem_name])
             elif elem_name.endswith('Box'):
                 getattr(self.ui, elem_name).setCurrentIndex(self.config[elem_name][1])
+                getattr(self.ui, elem_name).setCurrentText(self.config[elem_name][0])
             elif elem_name.endswith('Num'):
                 getattr(self.ui, elem_name).setValue(self.config[elem_name])
         self.window.setWindowTitle(f'Configure {self.machine}')
