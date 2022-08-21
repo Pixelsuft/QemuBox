@@ -166,12 +166,12 @@ def run_machine(c: dict) -> None:
         a[-1] += f',splash-time={c["splashNum"]}'
     if c['usbCheck']:
         a.append('-usb')
-    a += utils.parse_cmdline(c['otherEdit'])
     for device_name in c['devices']:
         a.append('-device')
         a.append(device_name)
         if c['devices'][device_name]['other']:
             a += ',' + c['devices'][device_name]['other']
+    a += utils.parse_cmdline(c['otherEdit'])
     print(utils.stringify_cmdline(tuple(a)))
     try:
         if c['runBox'][1] == 0:
