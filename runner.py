@@ -170,7 +170,7 @@ def run_machine(c: dict) -> None:
         a.append('-device')
         a.append(device_name)
         if c['devices'][device_name]['other']:
-            a += ',' + c['devices'][device_name]['other']
+            a[-1] += ',' + c['devices'][device_name]['other']
     a += utils.parse_cmdline(c['otherEdit'])
     print(utils.stringify_cmdline(tuple(a)))
     try:
